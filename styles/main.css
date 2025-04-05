@@ -1,11 +1,18 @@
-h1 {
-  background-color: black;
-  color: white;
-  text-align: center;
 
-}
-p {
-  background-color: bisque;
-  color: black;
+h1 {
+  font-family: Impact, sans-serif;
+  color: #CE5937;
   text-align: center;
-}
+  }
+  p {
+    text-align: center;
+  }
+  body {
+    background-color: #33e9ff 
+  }
+  h2 {font-family: Impact, sans-serif;
+  color: #CE5937;
+  text-align: center;
+  }
+    
+  
