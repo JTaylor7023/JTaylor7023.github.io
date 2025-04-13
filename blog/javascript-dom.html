@@ -8,7 +8,16 @@
     <link rel="stylesheet" href="..//style.css">
   </head>
   <body>
-    <script src="index.js"></script>
+    <script>
+        // This function interacts with the DOM
+    function changeMessage() {
+      // Access the paragraph element with id "message"
+      const messageElement = document.getElementById("message");
+
+      // Change its text content
+      messageElement.textContent = "The DOM has been updated using JavaScript!";
+    }
+    </script>
     <h2>Javascript Fundamentals</h2>
     
     <h4 style="text-align: center;">Javascript as drama!</h4>
@@ -107,6 +116,17 @@
       <li><em>Control Flow:</em> If you do this than that happens</li>
       <li><em>Loops:</em> "Keep doing this until...."</li>
     </ul>
+    <h4 style="text-align: center;">What is the DOM?</h4>
+  <p>
+    The <strong>DOM (Document Object Model)</strong>It’s a tree-like structure that represents your entire webpage, and it lets JavaScript interact with HTML and CSS.
+    JavaScript can use the DOM to access and manipulate elements on the page.
+  </p>
+
+  <h5 style="text-align: center;">Example: Interacting with the DOM</h5>
+  <p>Click the button to change the message below:</p>
+
+  <button onclick="changeMessage()">Click Me!</button>
+  <p id="message">This is the original message.</p>
     
     
     
