@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript-DOM</title>
+    <link rel="stylesheet" href="..//style.css">
+  </head>
+  <body>
+    <script src="index.js"></script>
+    <h2>Javascript Fundamentals</h2>
+    
+    <h4 style="text-align: center;">Javascript as drama!</h4>
+    <div>
+      <p>Think of HTML as a script of a play. It defines what is on stage, the actors, their lines and a plays structure.</p>
+    </div>
+    <div>
+      <p>
+        CSS is what goes on behind the scenes. The costumes, the lightning and background scenery. It makes things look good.
+      </p>
+
+    </div>
+    <div>
+      <p>Javascript is the Director (or God). It brings things to life. It tells actors when to enter or exit and how to react 
+        or change mood or behaviour. 
+      </p>
+      <p>It controls how things behave.</p>
+    </div>
+    <div></div>
+    <div>
+      <h4 style="text-align: center;">Control Flow and Loops</h4>
+    </div>
+    <div>
+      <div>
+        <p>Control Flow is like playing a video game.</p>
+        <pre>
+         <code>
+          startLevel();
+        </code>
+      </pre>
+        <p>You have a key-you open a chest.</p>
+        <pre>
+         <code>if (player.hasKey) {
+          openTreasureChest();
+      }
+        </code>
+      </pre>
+        <p>You fall in a pit and lose a life.</p>
+        <pre>
+      <code>if (player.fellInPit) {
+        loseLife();
+      }
+      </code>
+      </pre>
+        <p>You defeat the boss</p>
+        <pre>
+        <code>
+          defeatBoss()
+
+        </code>
+      </pre>
+        <p>The level ends.</p>
+       <pre>
+        <code>
+          endLevel()
+        </code>
+      </pre> 
+      </div>
+      <p>This is control flow deciding what happens in a situation.</p>
+    </div>
+    <div>
+      <h4 style="text-align: center;">Loops</h4>
+    </div>
+    <div>
+      <p>Now you fighting hordes of zombies...they keep coming and coming.</p>
+    </div>
+    <div>
+      <ul class="loopExample">
+        <li>While there are enemies:</li>
+        <li>Attack zombies</li>
+        <li>Dodge zombies</li>
+        <li>Repeat</li>
+      </ul>
+      <pre>
+        <code>
+          while (enemies.length > 0) {
+            let enemy = enemies.pop();
+            attack(enemy);
+            dodge(enemy.attack);
+          }
+        </code>
+      </pre>
+    </div>
+    <div>
+      <p>How about a "for" loop for collecting coins.</p>
+      <pre>
+        <code>
+          for (let i = 0; i < coins.length; i++) {
+            collect(coins[i]);
+          }
+        </code>
+      </pre>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+    
+  </body>
+</html>
