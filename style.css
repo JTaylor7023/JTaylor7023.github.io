@@ -31,6 +31,9 @@ h1 {
   }
   p {
     text-align: center;
+    
+      
+  
   }
  h2 {font-family: Impact, sans-serif;
   color: #2e4053;
@@ -69,7 +72,13 @@ footer {
   background: #333;
   color: #fff;
 }
-
+pre {
+  text-align: center;
+}
+.loopExample {
+  text-align: center;
+  list-style-type: none;
+}
 /* Responsive design using media queries */
 @media (max-width: 768px) {
   body {
