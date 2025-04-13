@@ -79,6 +79,16 @@ pre {
   text-align: center;
   list-style-type: none;
 }
+#message {
+  color: blue;
+  margin-top: 10px;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
 /* Responsive design using media queries */
 @media (max-width: 768px) {
   body {
