@@ -127,6 +127,79 @@
 
   <button onclick="changeMessage()">Click Me!</button>
   <p id="message">This is the original message.</p>
+  <div>
+    <h4 style="text-align: center;">Arrays</h4>
+    <p>Arrays are like a row of numbered mailboxes.</p>
+    <p>They are ordered lists where each box has a number (index).</p>
+  </div>
+  <div>
+    <pre>
+      <code>
+        let fruits = ["apple", "banana", "cherry"];
+console.log(fruits[0]); // "apple"
+
+      </code>
+    </pre>
+    <ul style="text-align: center; list-style-type: none;">
+      <li>You access items by <em>number</em>(starting at 0)</li>
+      <li>Think: "Give me the first fruit" → fruits[0]</li>
+    </ul>
+  </div>
+  <p>Use arrays when order matters or you're using a list of similar items</p>
+  <div>
+    <h4 style="text-align: center;">Oblects</h4>
+    <p>An object is an unordered collecton of key value pairs-like folders with labels.</p>
+    <pre>
+      <code>
+        let person = {
+          name: "Alex",
+          age: 30,
+          city: "New York"
+        };
+        
+        console.log(person["name"]); // "Alex"
+        console.log(person.age);     // 30
+        
+      </code>
+    </pre>
+
+  </div>
+  <div>
+    <h4 style="text-align: center;">Functions.</h4>
+    <p>You can think of a function as a mini program inside your code</p>
+    <p>You can give it stuff to do (parameters) and it rreturns a ressult.</p>
+    <p>Lets say you make pancakes every morning, rather than writing out the recipe everytime....</p>
+
+  </div>
+  <div>
+    <pre>
+      <code>
+        function makePancakes(eggs, flour, milk) {
+          mix(eggs, flour, milk);
+          cook();
+          return "Pancakes are ready!";
+        }
+        
+      </code>
+    </pre>
+    <p>Then you just say(call)</p>
+    <pre>
+      <code>
+        makePancakes(2, "1 cup", "1/2 cup");
+
+      </code>
+    </pre>
+    <p style=""strong>Pancakes</p>
+  </div>
+  <div>
+    <p>
+      Functions are useful because you only have to write code once and it can be used anywhere.
+    </p>
+    <p>Functions keep code organised and easy to read.</p>
+    <p>Functions make debugging easier.</p>
+  </div>
+
+
     
     
     
