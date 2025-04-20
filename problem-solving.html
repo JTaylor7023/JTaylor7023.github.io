@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Problem Solving</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script src="index.js"></script>
+    <h2>💡 Problem Solving with JavaScript: Random Monster Generator</h2>
+
+    <section>
+      <h3>1. Understanding the Goal</h3>
+      <p>The challenge was to simulate a simple fantasy game mechanic where a random monster appears with specific properties like name, level, and hit points (HP). To do this, I broke the problem down into smaller parts:</p>
+      <ul>
+        <li>Create a structure to represent a monster</li>
+        <li>Store multiple monster objects</li>
+        <li>Select one randomly</li>
+        <li>Display its details</li>
+      </ul>
+    </section>
+  
+    <section>
+      <h3>2. Using Object-Oriented Programming (OOP)</h3>
+      <p>To represent monsters with shared properties and behavior, I used a <strong>JavaScript class</strong> called <code>Monster</code>. This helped organize my data and functions in one place.</p>
+      <pre><code>class Monster {
+    constructor(name, level, hitPoints) {
+      this.name = name;
+      this.level = level;
+      this.hitPoints = hitPoints;
+    }
+  
+    describe() {
+      return `${this.name} - Level: ${this.level}, HP: ${this.hitPoints}`;
+    }
+  }</code></pre>
+      <p>By using the <code>describe()</code> method, I made it easy to display a monster’s details whenever needed.</p>
+    </section>
+  
+    <section>
+      <h3>3. Creating and Managing Data</h3>
+      <p>Next, I created four monster objects and stored them in an array. This allowed me to manage them easily using array operations.</p>
+      <pre><code>const monsters = [
+    new Monster("Goblin", 3, 45),
+    new Monster("Troll", 5, 80),
+    new Monster("Dragon", 10, 150),
+    new Monster("Vampire", 7, 95)
+  ];</code></pre>
+    </section>
+  
+    <section>
+      <h3>4. Generating a Random Monster</h3>
+      <p>To simulate randomness, I used the <code>Math.random()</code> and <code>Math.floor()</code> methods. This is a common technique for choosing a random item from an array:</p>
+      <pre><code>function getRandomMonster() {
+    const randomIndex = Math.floor(Math.random() * monsters.length);
+    return monsters[randomIndex];
+  }</code></pre>
+      <p>Finally, I called the function and logged the result:</p>
+      <pre><code>const randomMonster = getRandomMonster();
+  console.log("A wild monster appears!");
+  console.log(randomMonster.describe());</code></pre>
+    </section>
+  
+    <section>
+      <h3>5. Takeaway</h3>
+      <p>This was a fun little project that combined a few essential problem-solving techniques in JavaScript:</p>
+      <ul>
+        <li>Breaking down the problem into manageable steps</li>
+        <li>Using object-oriented design to represent complex data</li>
+        <li>Managing collections with arrays</li>
+        <li>Applying randomization logic with built-in methods</li>
+      </ul>
+      <p>It’s a good example of how a small idea can be built up using logical, reusable code!</p>
+    </section>
+    <h3>🧠 My Problem-Solving Techniques</h3>
+    <p>When tackling a coding challenge like this, I lean on a few techniques and tools that help me stay on track:</p>
+    <ul>
+      <li><strong>Searching on Google:</strong> I'm confident using Google to look up syntax, examples, or concepts I'm unsure about. It’s my go-to resource when I hit a wall.</li>
+      <li><strong>Reading Error Messages:</strong> I’ve learned to actually <em>read</em> error messages carefully — they often point right to the problem!</li>
+      <li><strong>Trying Things Out:</strong> I’m not afraid to experiment. Sometimes trial-and-error is the fastest way to figure out what works.</li>
+      <li><strong>Writing Pseudocode:</strong> Before jumping into the code, I outline what I want to do in plain English. This helps clarify my logic and structure.</li>
+      <li><strong>Rubber Ducky Debugging:</strong> I’d never heard of this before, but it’s a fun idea — explaining your code out loud (even to a toy duck) to help spot mistakes. I might give it a try!</li>
+      <li><strong>Asking for Help:</strong> I’m reasonably confident reaching out to someone if I’m really stuck. Sometimes, just explaining the issue can help clarify the solution.</li>
+    </ul>
+  </section>
+  </body>
+</html>
