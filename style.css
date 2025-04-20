@@ -74,6 +74,11 @@ footer {
 }
 pre {
   text-align: center;
+  background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
 }
 .loopExample {
   text-align: center;
@@ -88,6 +93,21 @@ button {
   font-size: 16px;
   cursor: pointer;
   text-align: center;
+}
+
+section {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+pre {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-x: auto;
 }
 /* Responsive design using media queries */
 @media (max-width: 768px) {
