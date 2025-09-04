@@ -1,130 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/main.css"
   </head>
   <body>
-    <nav id="navbar">
-      <header>Id and Classes</header>
+    <header>
+      <h1 class="landmark">CSS & HTML: Class vs ID Best Practices</h1>
+    </header>
+    <nav>
       <ul>
-        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
-        <li>
-          <a class="nav-link" href="#What_you_need_to_know"
-            >What you need to know</a
-          >
-        </li>
-        <li>
-          <a class="nav-link" href="#Id"
-            >Id's</a
-          >
-        </li>
-        <li><a class="nav-link" href="#classes">Classes</a></li>
-        <li><a class="nav-link" href="#things-to-know">Things to know</a></li>
-        <li>
-          <a class="nav-link" href="#screenshots"
-            >Screenshots</a
-          >
-        </li>
-        
-         <main id="main-doc">
-      <section class="main-section" id="Introduction">
-        <header>Introduction</header>
-        <article>
-          <p>
-            So you want to learn the difference between Id's and Classes in simple laymens term?
-          </p>
-          <p>
-            Well you can follow the links in this blog post to learn more.
-          </p>
-          <section class="main-section" id="What_you_need_to_know">
-        <header>What you need to know</header>
-        <article>
-          <p>Id's and Classes are labels or hooks that we attach to elements to style or target them</p>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#what-is-class">What is a Class?</a></li>
+        <li><a href="#what-is-id">What is an ID?</a></li>
+        <li><a href="#key-differences">Key Differences</a></li>
+        <li><a href="#best-practices">Best Practices</a></li>
+        <li><a href="#when-to-use">When to Use Each</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="intro">
+        <h2 class="landmark">Introduction</h2>
+        <p>
+          When you start building or styling websites, you'll often hear about
+          <code>class</code> and <code>id</code>. Both are used in HTML and CSS,
+          but they serve different purposes. Knowing when and how to use each is
+          important for writing clean, efficient, and maintainable code. This
+          blog post will explain the differences and best practices for using
+          <code>class</code> and <code>id</code> in your projects.
+        </p>
+      </section>
 
-          <ul>
-            <li>
-              Id: It's like a name tag and is unique.
-            </li>
-            <li>Classes: Is like a group badge and can be shared.</li>
-            
-          </ul>
-          <img src="..//images/id-and-class.jpg" alt="Id's and classes">
-        </article>
+      <section id="what-is-class">
+        <h2 class="landmark">What is a Class?</h2>
+        <p>
+          A <code>class</code> is like a label you can attach to one or more
+          HTML elements. It allows you to apply the same styles or behaviors to
+          all elements with that label. Think of it as a way to group similar
+          items together.
+        </p>
+        <p>For example:</p>
+        <pre><code>&lt;style&gt;
+  .highlight {
+    background-color: yellow;
+  }
+&lt;/style&gt;
+&lt;p class="highlight"&gt;This paragraph is highlighted.&lt;/p&gt;
+&lt;p class="highlight"&gt;This one is also highlighted.&lt;/p&gt;</code></pre>
+        <p>
+          Here, both paragraphs will have a yellow background because they share
+          the <code>highlight</code> class.
+        </p>
       </section>
-          <h2>
-            Right, lets get a bit more specific:
-          </h2>
-          <section class="main-section" id="Id">
-        <header>Id's</header>
-        <article>
-          <p>
-            Id's are unique. That means you can only use them on ONE elemnt. This may not appear important but if you use an Id on more than one element your code will not pass.
-          </p>
-          <li>
-            <ul>
-              Each element can only have one Id.
-            </ul>
-            <ul>
-              Each page can have only one element with that ID
-            </ul>
-          </li>
 
-          
-        
-        </article>
+      <section id="what-is-id">
+        <h2 class="landmark">What is an ID?</h2>
+        <p>
+          An <code>id</code> is a unique identifier for a single HTML element.
+          It should only be used once per page. IDs are often used for styling,
+          but they are also important for linking to specific parts of a page or
+          for JavaScript to find and manipulate a single element.
+        </p>
+        <p>For example:</p>
+        <pre><code>&lt;style&gt;
+  #main-title {
+    color: blue;
+  }
+&lt;/style&gt;
+&lt;h1 id="main-title"&gt;Welcome to My Website&lt;/h1&gt;</code></pre>
+        <p>
+          In this example, only the <code>&lt;h1&gt;</code> element with the
+          <code>id="main-title"</code> will be blue.
+        </p>
       </section>
-           <section class="main-section" id="classes">
-        <header>Classes</header>
-        <article>
-          <p>
-            Classes are not unique. 
-          </p>
+
+      <section id="key-differences">
+        <h2 class="landmark">Key Differences</h2>
+        <table>
+          <tr>
+            <th>Class</th>
+            <th>ID</th>
+          </tr>
+          <tr>
+            <td>Can be used on multiple elements</td>
+            <td>Should be used on only one element per page</td>
+          </tr>
+          <tr>
+            <td>Starts with a dot in CSS (e.g., <code>.my-class</code>)</td>
+            <td>Starts with a hash in CSS (e.g., <code>#my-id</code>)</td>
+          </tr>
+          <tr>
+            <td>Used for grouping and reusing styles</td>
+            <td>Used for unique styling or JavaScript targeting</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="best-practices">
+        <h2 class="landmark">Best Practices</h2>
+        <h3>Using Classes</h3>
+        <ul>
           <li>
-            <ul>
-              You can use the same class on multiple elements.
-            </ul>
-            <ul>
-              You can use multiple classes on the same element.
-            </ul>
+            <strong>Reusability:</strong> Use classes when you want to style or
+            behave multiple elements in the same way.
           </li>
-        </article>
-             <section class="main-section" id="things-to-know">
-        <header>Things to know</header>
-        <article>
-          <ul>
-            <li>CSS doesn't care.</li>
-          </ul>
-          <p>
-            In CSS there is nothing you can't do with a class and vice versa
-          </p>
-          <ul>
-            Javacript cares.
-          </ul>
-          <p>
-           Javascript depends on there being one element with a particular Id
-          </p>
-          <ul>
-            If you don't need them don't use them.
-          </ul>
-          <p>
-            Classes and ID’s are very important and we rely on them every day to do the styling and page manipulation that we need to do. However, you should use them judiciously and semantically.
-          </p>
-          
-          
-          
-        </article>
+          <li>
+            <strong>Semantic Naming:</strong> Name your classes based on their
+            purpose, not their appearance. For example, use
+            <code>.button-primary</code> instead of <code>.blue-button</code>.
+          </li>
+          <li>
+            <strong>Avoid Overuse:</strong> Don't add a class to every element.
+            Use classes for elements that need unique or shared styling.
+          </li>
+        </ul>
+        <h3>Using IDs</h3>
+        <ul>
+          <li>
+            <strong>Uniqueness:</strong> Make sure each ID is unique on the
+            page.
+          </li>
+          <li>
+            <strong>Specificity:</strong> Use IDs sparingly, as they have higher
+            specificity and can make your CSS harder to override.
+          </li>
+          <li>
+            <strong>Linking:</strong> Use IDs to link to specific sections of
+            your page (e.g.,
+            <code>&lt;a href="#section1"&gt;Jump to Section 1&lt;/a&gt;</code>).
+          </li>
+        </ul>
+        <div class="tip">
+          <strong>Tip:</strong> If you find yourself using many IDs for styling,
+          consider using classes instead. IDs are best for unique elements or
+          JavaScript.
+        </div>
       </section>
-       <section class="main-section" id="screenshots">
-        <header>Screenshots</header>
-        <img src="..//images/Classes_and_ID_Compared.jpg" alt="compared">
-        
-         
-        
-        
+
+      <section id="when-to-use">
+        <h2>When to Use Each</h2>
+        <p>
+          <strong>Use a class when:</strong>
+        </p>
+        <ul>
+          <li>You want to style or behave multiple elements the same way.</li>
+          <li>You need to target a group of elements with JavaScript.</li>
+        </ul>
+        <p>
+          <strong>Use an ID when:</strong>
+        </p>
+        <ul>
+          <li>You need to style or manipulate a single, unique element.</li>
+          <li>You want to link to a specific part of your page.</li>
+        </ul>
       </section>
+
+      <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p>
+          Understanding the difference between <code>class</code> and
+          <code>id</code> is fundamental to writing good HTML and CSS. Classes
+          help you organize and reuse styles, while IDs help you target unique
+          elements. By following best practices, you can create clean,
+          maintainable, and efficient web pages.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Justin Taylor</p>
+    </footer>
   </body>
 </html>
