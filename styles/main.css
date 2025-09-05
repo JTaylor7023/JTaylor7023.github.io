@@ -176,3 +176,30 @@ blockquote {
   padding-bottom: 1rem;
   border-bottom: 1px solid #e9ecef;
 }
+
+.learning-body {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.main-title {
+  color: #2c3e50;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Media query */
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  .content {
+    padding: 1.5rem;
+  }
+}
