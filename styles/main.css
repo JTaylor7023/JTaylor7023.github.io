@@ -118,3 +118,40 @@ section {
 .landmark {
   color: #2196f3;
 }
+
+/* Identity vlaues */
+
+.container {
+  max-width: 700px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
+  background: #fff;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  border-left: 4px solid #4a7c59;
+  padding-left: 1rem;
+  margin: 0 0 1rem;
+  color: #444;
+}
+
+.proverb-source {
+  text-align: right;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.main-body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
