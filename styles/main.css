@@ -2,6 +2,7 @@
   --primary-color: #3498db;
   --secondary-color: #2c3e50;
   --accent-color: #e74c3c;
+  --alt-accent-color: #1abc9b;
   --light-bg: #f9f9f9;
   --dark-bg: #ecf0f1;
   --text-color: #333;
@@ -11,7 +12,7 @@
   --transition: all 0.3s ease;
 }
 
-/* Reset and Base Styles */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -99,7 +100,7 @@ main {
   box-shadow: var(--box-shadow);
 }
 
-/* Section (Both Blogs) */
+/* Section  */
 .section,
 section {
   margin-bottom: 2rem;
@@ -224,4 +225,50 @@ footer {
   .blog-grid {
     grid-template-columns: 1fr;
   }
+  .container {
+    padding: 1rem;
+  }
+}
+
+/* Identity CSS */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--dark-bg);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+blockquote {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--secondary-color);
+  border-left: 4px solid var(var(--primary-color));
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.proverb-source {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--alt-accent-color);
+  margin-bottom: 1.5rem;
+  text-align: end;
+}
+
+.values-text {
+  margin-bottom: 1rem;
+  background: var(--light-bg);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.values-text:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
