@@ -359,3 +359,30 @@ blockquote {
   border-left: 3px solid #6c63ff;
   border-radius: 4px;
 }
+
+/* Markdown styling */
+
+.markdown-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  background-color: rgba(52, 152, 219, 0.1);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  border: 1px solid rgba(52, 152, 219, 0.3);
+  margin: 0.5rem 0;
+  max-width: fit-content;
+}
+
+.markdown-link:hover {
+  background-color: rgba(52, 152, 219, 0.2);
+  border-color: var(--primary-color);
+}
+
+.file-icon {
+  font-size: 1.2rem;
+}
