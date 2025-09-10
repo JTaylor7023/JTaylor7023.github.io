@@ -33,6 +33,53 @@
         margin: 1.5rem 0;
         font-style: italic;
       }
+
+      .mindfulness-section {
+        background-color: #f9fafb;
+        padding: 2.5rem 1.5rem;
+        margin-top: 3rem;
+        border-radius: 8px;
+      }
+
+      .mindfulness-section .mindfulness-title {
+        font-size: 2rem;
+        color: #2c3e50; /* deep slate */
+        margin-bottom: 1rem;
+      }
+
+      .mindfulness-section .mindfulness-image-wrapper {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto 1.5rem;
+        text-align: center;
+      }
+      .mindfulness-section .mindfulness-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .mindfulness-section .mindfulness-caption {
+        font-size: 0.875rem;
+        color: #7f8c8d;
+        margin-top: 0.5rem;
+      }
+
+      .mindfulness-section .mindfulness-text {
+        line-height: 1.6;
+        font-size: 1rem;
+        color: #34495e;
+      }
+
+      @media (max-width: 600px) {
+        .mindfulness-section {
+          padding: 1.5rem;
+        }
+        .mindfulness-section .mindfulness-title {
+          font-size: 1.75rem;
+        }
+      }
     </style>
   </head>
 
@@ -58,7 +105,6 @@
           </p>
         </div>
 
-        <!-- What is EI? -->
         <div class="box">
           <h2 class="title is-4">What Is Emotional Intelligence?</h2>
           <p>
@@ -111,8 +157,8 @@
         <div class="box">
           <h2 class="title is-4">Can You Boost Your Emotional Intelligence?</h2>
           <p>
-            Absolutely! like any skill, EI grows with deliberate practice. Try
-            these starter steps:
+            Absolutely! like any skill, EI grows with practice. Try these
+            starter steps:
           </p>
           <ul>
             <li>
@@ -132,15 +178,37 @@
           <p>
             Emotional intelligence isn't about bottling up feelings; it's about
             understanding them deeply and using that awareness to make your own
-            life and the lives of those around you. In this modern world
+            life and the lives of those around you better. In this modern world
             brimming with complexity and human interaction, investing in EI can
             pay lifelong dividends.
           </p>
           <p>
-            Thanks for reading! Feel free to share your experiences or insights
-            about emotional intelligence in the comments below.
+            Thanks for reading! Hopefully you will find this helpful and steer
+            you on your journey.
           </p>
         </div>
+        <section class="section mindfulness-section">
+          <h2 class="mindfulness-title">Mindfulness</h2>
+
+          <figure class="mindfulness-image-wrapper">
+            <img
+              src="../images/mindfulness.jpeg"
+              alt="my mindfulness score"
+              class="mindfulness-image"
+            />
+            <figcaption class="mindfulness-caption">
+              Sharing the screenshot of my mindfulness score.
+            </figcaption>
+          </figure>
+
+          <p class="mindfulness-text">
+            Practicing mindfulness helps you stay present, reduce stress, and
+            can improve overall well being. By focusing on your breathing and
+            observing your thoughts without judgment, you can cultivate a
+            calmer, more centered mind. It can be beneficial to incorporate
+            short mindful pauses throughout your day to reap these benefits.
+          </p>
+        </section>
       </div>
     </section>
 
