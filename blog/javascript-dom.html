@@ -1,212 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Javascript-DOM</title>
-    <link rel="stylesheet" href="..//style.css">
+    <meta charset="UTF-8" />
+    <title>Javascript and the Dom with a bit of myth</title>
+    <style></style>
   </head>
   <body>
-    <script>
-        // This function interacts with the DOM
-    function changeMessage() {
-      // Access the paragraph element with id "message"
-      const messageElement = document.getElementById("message");
+    <!-- ==================== Pygmalion & Galatea ==================== -->
+    <section class="demo">
+      <h2>Pygmalion &amp; Galatea</h2>
 
-      // Change its text content
-      messageElement.textContent = "The DOM has been updated using JavaScript!";
-    }
-    </script>
-    <h2>Javascript Fundamentals</h2>
-    
-    <h4 style="text-align: center;">Javascript as drama!</h4>
-    <div>
-      <p>Think of HTML as a script of a play. It defines what is on stage, the actors, their lines and a plays structure.</p>
-    </div>
-    <div>
       <p>
-        CSS is what goes on behind the scenes. The costumes, the lightning and background scenery. It makes things look good.
+        In Ovid's <em>Metamorphoses</em>, the sculptor Pygmalion falls in love
+        with a statue he has crafted. Moved by his devotion, the goddess Venus
+        brings the marble figure to life, naming her Galatea. The myth captures
+        the moment when an inanimate creation becomes animated through love and
+        intention.
       </p>
 
-    </div>
-    <div>
-      <p>Javascript is the Director (or God). It brings things to life. It tells actors when to enter or exit and how to react 
-        or change mood or behaviour. 
+      <p>
+        In web development, the <strong>Document Object Model (DOM)</strong> is
+        our "statue": a static representation of the page. JavaScript acts as
+        the modern-day Pygmalion, breathing interactivity into the DOM. Clicking
+        the stone triggers a transformation-exactly as the myth describes a
+        creator's touch turning stone into flesh.
       </p>
-      <p>It controls how things behave.</p>
-    </div>
-    <div></div>
-    <div>
-      <h4 style="text-align: center;">Control Flow and Loops</h4>
-    </div>
-    <div>
-      <div>
-        <p>Control Flow is like playing a video game.</p>
-        <pre>
-         <code>
-          startLevel();
-        </code>
-      </pre>
-        <p>You have a key-you open a chest.</p>
-        <pre>
-         <code>if (player.hasKey) {
-          openTreasureChest();
-      }
-        </code>
-      </pre>
-        <p>You fall in a pit and lose a life.</p>
-        <pre>
-      <code>if (player.fellInPit) {
-        loseLife();
-      }
-      </code>
-      </pre>
-        <p>You defeat the boss</p>
-        <pre>
-        <code>
-          defeatBoss()
 
-        </code>
-      </pre>
-        <p>The level ends.</p>
-       <pre>
-        <code>
-          endLevel()
-        </code>
-      </pre> 
+      <div id="galatea">🗿 (Click me)</div>
+
+      <p id="story-pyg"></p>
+    </section>
+
+    <!-- ==================== Sisyphus & the Boulder ==================== -->
+    <section class="demo">
+      <h2>Sisyphus &amp; the Boulder: Loops</h2>
+
+      <p>
+        The Greek punishment of Sisyphus-forever rolling a massive boulder up a
+        hill only to watch it tumble back down is a vivid metaphor for endless
+        repetition. It illustrates the futility of a task that never reaches a
+        terminal state unless something changes.
+      </p>
+
+      <p>
+        In programming, a <strong>loop</strong> repeats a block of code until a
+        condition alters its flow. Our demo shows the boulder's ascent and
+        descent on a timed interval, mirroring a <code>setInterval</code>
+        loop that continues until we explicitly break it (by pressing "Stop
+        Loop"). The visual cue makes the abstract concept concrete.
+      </p>
+
+      <div id="hill">
+        <div id="boulder"></div>
       </div>
-      <p>This is control flow deciding what happens in a situation.</p>
-    </div>
-    <div>
-      <h4 style="text-align: center;">Loops</h4>
-    </div>
-    <div>
-      <p>Now you fighting hordes of zombies...they keep coming and coming.</p>
-    </div>
-    <div>
-      <ul class="loopExample">
-        <li>While there are enemies:</li>
-        <li>Attack zombies</li>
-        <li>Dodge zombies</li>
-        <li>Repeat</li>
+
+      <button id="startLoop">Start Loop</button>
+      <button id="stopLoop">Stop Loop</button>
+
+      <p id="story-sis"></p>
+    </section>
+
+    <!-- ==================== Labyrinth of the Minotaur ==================== -->
+    <section class="demo">
+      <h2>Labyrinth of the Minotaur: DOM &amp; Interaction</h2>
+
+      <p><strong>The DOM as the Labyrinth of the Minotaur</strong></p>
+      <ul>
+        <li>
+          <strong>The DOM</strong> is the <strong>Labyrinth</strong> a vast,
+          intricate structure built by Daedalus, full of walls (HTML elements),
+          passages (nested tags), and chambers (attributes and content). It's
+          static and maze like, waiting to be explored or changed.
+        </li>
+        <li>
+          <strong>JavaScript</strong> is <strong>Theseus</strong> the hero who
+          enters the Labyrinth, finds his way around, and can even move walls,
+          open doors (change styles, add/remove elements), or slay the Minotaur
+          (handle user events).
+        </li>
+        <li>
+          <strong>User Interaction</strong> is
+          <strong>Ariadne's Thread</strong> the red string Ariadne gives Theseus
+          to mark his path and respond to his actions. When a user clicks,
+          types, or scrolls, it's like pulling the thread, guiding Theseus
+          (JavaScript) to react and change the Labyrinth (DOM).
+        </li>
       </ul>
-      <pre>
-        <code>
-          while (enemies.length > 0) {
-            let enemy = enemies.pop();
-            attack(enemy);
-            dodge(enemy.attack);
-          }
-        </code>
-      </pre>
-    </div>
-    <div>
-      <p>How about a "for" loop for collecting coins.</p>
-      <pre>
-        <code>
-          for (let i = 0; i < coins.length; i++) {
-            collect(coins[i]);
-          }
-        </code>
-      </pre>
-    </div>
-    <p><em>Basically:</em></p>
-    <ul class="loopExample">
-      <li><em>Control Flow:</em> If you do this than that happens</li>
-      <li><em>Loops:</em> "Keep doing this until...."</li>
-    </ul>
-    <h4 style="text-align: center;">What is the DOM?</h4>
-  <p>
-    The <strong>DOM (Document Object Model)</strong>It’s a tree-like structure that represents your entire webpage, and it lets JavaScript interact with HTML and CSS.
-    JavaScript can use the DOM to access and manipulate elements on the page.
-  </p>
 
-  <h5 style="text-align: center;">Example: Interacting with the DOM</h5>
-  <p>Click the button to change the message below:</p>
+      <p>
+        Click the walls of the labyrinth. Theseus (JavaScript) will open or
+        close passages, just as you manipulate the DOM in response to user
+        actions.
+      </p>
 
-  <button onclick="changeMessage()">Click Me!</button>
-  <p id="message">This is the original message.</p>
-  <div>
-    <h4 style="text-align: center;">Arrays</h4>
-    <p>Arrays are like a row of numbered mailboxes.</p>
-    <p>They are ordered lists where each box has a number (index).</p>
-  </div>
-  <div>
-    <pre>
-      <code>
-        let fruits = ["apple", "banana", "cherry"];
-console.log(fruits[0]); // "apple"
+      <div class="labyrinth">
+        <div class="wall">🧱</div>
+        <div class="wall">🧱</div>
+        <div class="wall">🧱</div>
+        <div class="wall">🧱</div>
+        <div class="wall">🧱</div>
+        <div class="wall">🧱</div>
+        <div class="wall">🧱</div>
+        <div class="wall">🧱</div>
+      </div>
 
-      </code>
-    </pre>
-    <ul style="text-align: center; list-style-type: none;">
-      <li>You access items by <em>number</em>(starting at 0)</li>
-      <li>Think: "Give me the first fruit" → fruits[0]</li>
-    </ul>
-  </div>
-  <p>Use arrays when order matters or you're using a list of similar items</p>
-  <div>
-    <h4 style="text-align: center;">Oblects</h4>
-    <p>An object is an unordered collecton of key value pairs-like folders with labels.</p>
-    <pre>
-      <code>
-        let person = {
-          name: "Alex",
-          age: 30,
-          city: "New York"
-        };
-        
-        console.log(person["name"]); // "Alex"
-        console.log(person.age);     // 30
-        
-      </code>
-    </pre>
+      <p id="story-lab"></p>
+    </section>
 
-  </div>
-  <div>
-    <h4 style="text-align: center;">Functions.</h4>
-    <p>You can think of a function as a mini program inside your code</p>
-    <p>You can give it stuff to do (parameters) and it rreturns a ressult.</p>
-    <p>Lets say you make pancakes every morning, rather than writing out the recipe everytime....</p>
+    <script>
+      /* ---------- Pygmalion demo ---------- */
+      const galatea = document.getElementById('galatea')
+      const pygStory = document.getElementById('story-pyg')
 
-  </div>
-  <div>
-    <pre>
-      <code>
-        function makePancakes(eggs, flour, milk) {
-          mix(eggs, flour, milk);
-          cook();
-          return "Pancakes are ready!";
+      galatea.addEventListener('click', () => {
+        galatea.classList.toggle('alive')
+        if (galatea.classList.contains('alive')) {
+          pygStory.textContent =
+            "With JavaScript, the statue comes alive! The DOM responds to your touch, just as Galatea responded to Pygmalion's love."
+          galatea.textContent = '💃 (Alive!)'
+        } else {
+          pygStory.textContent =
+            'The DOM is like Galatea, a beautiful but lifeless statue. JavaScript is Pygmalion, bringing her to life with interaction.'
+          galatea.textContent = '🗿 (Click me)'
         }
-        
-      </code>
-    </pre>
-    <p>Then you just say(call)</p>
-    <pre>
-      <code>
-        makePancakes(2, "1 cup", "1/2 cup");
+      })
 
-      </code>
-    </pre>
-    <p style=""strong>Pancakes</p>
-  </div>
-  <div>
-    <p>
-      Functions are useful because you only have to write code once and it can be used anywhere.
-    </p>
-    <p>Functions keep code organised and easy to read.</p>
-    <p>Functions make debugging easier.</p>
-  </div>
+      /* ---------- Sisyphus demo ---------- */
+      const boulder = document.getElementById('boulder')
+      const startLoop = document.getElementById('startLoop')
+      const stopLoop = document.getElementById('stopLoop')
+      const sisStory = document.getElementById('story-sis')
 
+      let loopId = null
 
-    
-    
-    
-      
-      
-      
-      
-    
+      function pushBoulder() {
+        boulder.style.bottom = '180px' // climb
+        setTimeout(() => {
+          boulder.style.bottom = '20px' // fall
+        }, 1000)
+      }
+
+      startLoop.addEventListener('click', () => {
+        if (!loopId) {
+          sisStory.textContent =
+            'Sisyphus is pushing the boulder up the hill… but it always rolls back down. This is a loop in action!'
+          loopId = setInterval(pushBoulder, 1500)
+        }
+      })
+
+      stopLoop.addEventListener('click', () => {
+        if (loopId) {
+          clearInterval(loopId)
+          loopId = null
+          sisStory.textContent =
+            'The loop has stopped. Sisyphus rests—until you start it again!'
+          boulder.style.bottom = '20px'
+        }
+      })
+
+      /* ---------- Labyrinth demo ---------- */
+      const walls = document.querySelectorAll('.wall')
+      const labStory = document.getElementById('story-lab')
+
+      walls.forEach((wall) => {
+        wall.addEventListener('click', () => {
+          wall.classList.toggle('open')
+          if (wall.classList.contains('open')) {
+            wall.textContent = '🚪'
+            labStory.textContent =
+              'Theseus opens a passage! The DOM changes as you interact with it.'
+          } else {
+            wall.textContent = '🧱'
+            labStory.textContent =
+              'Theseus closes the passage. The DOM returns to its original state.'
+          }
+        })
+      })
+    </script>
   </body>
 </html>
