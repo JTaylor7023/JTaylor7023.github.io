@@ -2,148 +2,182 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Javascript and the Dom with a bit of myth</title>
-    <style></style>
+    <title>Myth & Library Programming Analogies</title>
+    <style>
+      body {
+        font-family: Georgia, serif;
+        background: #fdf6e3;
+        color: #333;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      h1 {
+        text-align: center;
+        color: #8b0000;
+      }
+      h2 {
+        margin-top: 2rem;
+        color: #a52a2a;
+      }
+      .demo {
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 1rem;
+        margin: 1.5rem 0;
+        background: #fff8dc;
+      }
+      button {
+        background: #8b0000;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        margin: 0.5rem;
+      }
+      button:hover {
+        background: #a52a2a;
+      }
+      input {
+        padding: 0.4rem;
+        margin: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      #output,
+      .story {
+        margin-top: 1rem;
+        padding: 0.8rem;
+        border: 1px solid #8b0000;
+        border-radius: 6px;
+        background: #fff;
+        min-height: 40px;
+        font-style: italic;
+      }
+      /* Sisyphus styles */
+      #hill {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 1rem auto;
+        background: linear-gradient(to top, #6b8e23 0%, #a2c523 100%);
+        border-radius: 50% 50% 0 0;
+        overflow: hidden;
+      }
+      #boulder {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        background: #555;
+        border-radius: 50%;
+        transition: bottom 0.5s ease;
+      }
+      /* Pygmalion styles */
+      #galatea {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 3rem;
+        user-select: none;
+        transition: transform 0.3s;
+      }
+      #galatea.alive {
+        transform: scale(1.2);
+      }
+    </style>
   </head>
   <body>
-    <!-- ==================== Pygmalion & Galatea ==================== -->
+    <h1>⚡ Programming Concepts through Myth & Analogy</h1>
+
+    <!-- 1. JS + HTML + CSS analogy -->
     <section class="demo">
-      <h2>Pygmalion &amp; Galatea</h2>
-
-      <p>
-        In Ovid's <em>Metamorphoses</em>, the sculptor Pygmalion falls in love
-        with a statue he has crafted. Moved by his devotion, the goddess Venus
-        brings the marble figure to life, naming her Galatea. The myth captures
-        the moment when an inanimate creation becomes animated through love and
-        intention.
-      </p>
-
-      <p>
-        In web development, the <strong>Document Object Model (DOM)</strong> is
-        our "statue": a static representation of the page. JavaScript acts as
-        the modern-day Pygmalion, breathing interactivity into the DOM. Clicking
-        the stone triggers a transformation-exactly as the myth describes a
-        creator's touch turning stone into flesh.
-      </p>
-
-      <div id="galatea">🗿 (Click me)</div>
-
-      <p id="story-pyg"></p>
-    </section>
-
-    <!-- ==================== Sisyphus & the Boulder ==================== -->
-    <section class="demo">
-      <h2>Sisyphus &amp; the Boulder: Loops</h2>
-
-      <p>
-        The Greek punishment of Sisyphus-forever rolling a massive boulder up a
-        hill only to watch it tumble back down is a vivid metaphor for endless
-        repetition. It illustrates the futility of a task that never reaches a
-        terminal state unless something changes.
-      </p>
-
-      <p>
-        In programming, a <strong>loop</strong> repeats a block of code until a
-        condition alters its flow. Our demo shows the boulder's ascent and
-        descent on a timed interval, mirroring a <code>setInterval</code>
-        loop that continues until we explicitly break it (by pressing "Stop
-        Loop"). The visual cue makes the abstract concept concrete.
-      </p>
-
-      <div id="hill">
-        <div id="boulder"></div>
-      </div>
-
-      <button id="startLoop">Start Loop</button>
-      <button id="stopLoop">Stop Loop</button>
-
-      <p id="story-sis"></p>
-    </section>
-
-    <!-- ==================== Labyrinth of the Minotaur ==================== -->
-    <section class="demo">
-      <h2>Labyrinth of the Minotaur: DOM &amp; Interaction</h2>
-
-      <p><strong>The DOM as the Labyrinth of the Minotaur</strong></p>
+      <h2>1. JavaScript, HTML & CSS = Builders of a Temple</h2>
+      <p>Imagine building a Greek temple:</p>
       <ul>
         <li>
-          <strong>The DOM</strong> is the <strong>Labyrinth</strong> a vast,
-          intricate structure built by Daedalus, full of walls (HTML elements),
-          passages (nested tags), and chambers (attributes and content). It's
-          static and maze like, waiting to be explored or changed.
+          <strong>HTML</strong> = the stone blocks and columns (structure)
         </li>
+        <li><strong>CSS</strong> = the carvings and paint (style)</li>
         <li>
-          <strong>JavaScript</strong> is <strong>Theseus</strong> the hero who
-          enters the Labyrinth, finds his way around, and can even move walls,
-          open doors (change styles, add/remove elements), or slay the Minotaur
-          (handle user events).
-        </li>
-        <li>
-          <strong>User Interaction</strong> is
-          <strong>Ariadne's Thread</strong> the red string Ariadne gives Theseus
-          to mark his path and respond to his actions. When a user clicks,
-          types, or scrolls, it's like pulling the thread, guiding Theseus
-          (JavaScript) to react and change the Labyrinth (DOM).
+          <strong>JavaScript</strong> = the priests who open the temple doors
+          and make statues move (behavior)
         </li>
       </ul>
-
       <p>
-        Click the walls of the labyrinth. Theseus (JavaScript) will open or
-        close passages, just as you manipulate the DOM in response to user
-        actions.
+        Without JavaScript, the temple is beautiful but lifeless. With it, the
+        space becomes alive and interactive.
       </p>
+    </section>
 
-      <div class="labyrinth">
-        <div class="wall">🧱</div>
-        <div class="wall">🧱</div>
-        <div class="wall">🧱</div>
-        <div class="wall">🧱</div>
-        <div class="wall">🧱</div>
-        <div class="wall">🧱</div>
-        <div class="wall">🧱</div>
-        <div class="wall">🧱</div>
-      </div>
+    <!-- 2. Sisyphus loop -->
+    <section class="demo">
+      <h2>2. Loops: Sisyphus & the Boulder</h2>
+      <div id="hill"><div id="boulder"></div></div>
+      <button id="startLoop">Start Loop</button>
+      <button id="stopLoop">Stop Loop</button>
+      <div class="story" id="story-sis"></div>
+    </section>
 
-      <p id="story-lab"></p>
+    <!-- 3. DOM: Pygmalion -->
+    <section class="demo">
+      <h2>3. The DOM: Pygmalion & Galatea</h2>
+      <div id="galatea">🗿 (Click me)</div>
+      <div class="story" id="story-pyg"></div>
+    </section>
+
+    <!-- 4. Arrays vs Objects: The Great Library -->
+    <section class="demo">
+      <h2>4. Arrays vs. Objects: The Great Library</h2>
+      <p>
+        Arrays = shelves of scrolls (numbered).<br />Objects = catalog drawers
+        (labeled).
+      </p>
+      <input type="number" id="shelfIndex" placeholder="Shelf # (e.g. 2)" />
+      <button onclick="searchShelf()">Search Shelf</button><br />
+      <input
+        type="text"
+        id="catalogKey"
+        placeholder="Catalog key (e.g. history)"
+      />
+      <button onclick="searchCatalog()">Search Catalog</button>
+      <div id="output">Try searching the shelves or the catalog!</div>
+    </section>
+
+    <!-- 5. Functions: Daedalus’s Tools -->
+    <section class="demo">
+      <h2>5. Functions: Daedalus’s Tools</h2>
+      <p>
+        In myth, Daedalus was a master craftsman. Instead of carving every block
+        by hand each time, he invented <strong>tools</strong> he could reuse.
+        <br />Functions in programming are like those tools: once defined, they
+        save effort and reduce mistakes.
+      </p>
+      <button onclick="useHammer()">Use Hammer Function</button>
+      <button onclick="useChisel()">Use Chisel Function</button>
+      <div class="story" id="story-tools"></div>
     </section>
 
     <script>
-      /* ---------- Pygmalion demo ---------- */
-      const galatea = document.getElementById('galatea')
-      const pygStory = document.getElementById('story-pyg')
-
-      galatea.addEventListener('click', () => {
-        galatea.classList.toggle('alive')
-        if (galatea.classList.contains('alive')) {
-          pygStory.textContent =
-            "With JavaScript, the statue comes alive! The DOM responds to your touch, just as Galatea responded to Pygmalion's love."
-          galatea.textContent = '💃 (Alive!)'
-        } else {
-          pygStory.textContent =
-            'The DOM is like Galatea, a beautiful but lifeless statue. JavaScript is Pygmalion, bringing her to life with interaction.'
-          galatea.textContent = '🗿 (Click me)'
-        }
-      })
-
       /* ---------- Sisyphus demo ---------- */
       const boulder = document.getElementById('boulder')
       const startLoop = document.getElementById('startLoop')
       const stopLoop = document.getElementById('stopLoop')
       const sisStory = document.getElementById('story-sis')
-
       let loopId = null
 
       function pushBoulder() {
-        boulder.style.bottom = '180px' // climb
+        boulder.style.bottom = '180px'
         setTimeout(() => {
-          boulder.style.bottom = '20px' // fall
+          boulder.style.bottom = '20px'
         }, 1000)
       }
 
       startLoop.addEventListener('click', () => {
         if (!loopId) {
           sisStory.textContent =
-            'Sisyphus is pushing the boulder up the hill… but it always rolls back down. This is a loop in action!'
+            'Sisyphus is pushing the boulder up the hill… it rolls back down. A loop in action!'
           loopId = setInterval(pushBoulder, 1500)
         }
       })
@@ -158,24 +192,64 @@
         }
       })
 
-      /* ---------- Labyrinth demo ---------- */
-      const walls = document.querySelectorAll('.wall')
-      const labStory = document.getElementById('story-lab')
+      /* ---------- Pygmalion demo ---------- */
+      const galatea = document.getElementById('galatea')
+      const pygStory = document.getElementById('story-pyg')
 
-      walls.forEach((wall) => {
-        wall.addEventListener('click', () => {
-          wall.classList.toggle('open')
-          if (wall.classList.contains('open')) {
-            wall.textContent = '🚪'
-            labStory.textContent =
-              'Theseus opens a passage! The DOM changes as you interact with it.'
-          } else {
-            wall.textContent = '🧱'
-            labStory.textContent =
-              'Theseus closes the passage. The DOM returns to its original state.'
-          }
-        })
+      galatea.addEventListener('click', () => {
+        galatea.classList.toggle('alive')
+        if (galatea.classList.contains('alive')) {
+          pygStory.textContent =
+            'With JavaScript, the statue comes alive! The DOM responds to your touch.'
+          galatea.textContent = '💃 (Alive!)'
+        } else {
+          pygStory.textContent =
+            'Without JavaScript, the DOM is like a statue—beautiful but lifeless.'
+          galatea.textContent = '🗿 (Click me)'
+        }
       })
+
+      /* ---------- Library demo ---------- */
+      const shelf = ['Iliad', 'Odyssey', 'Aeneid', 'Histories']
+      const catalog = {
+        philosophy: "Plato's Republic",
+        history: "Herodotus' Histories",
+        astronomy: "Ptolemy's Almagest",
+      }
+
+      function searchShelf() {
+        const index = document.getElementById('shelfIndex').value
+        const scroll = shelf[index]
+        const output = document.getElementById('output')
+        if (scroll) {
+          output.innerText = `📖 On shelf ${index}, we found: "${scroll}".`
+        } else {
+          output.innerText = `❌ No scroll at shelf ${index}.`
+        }
+      }
+
+      function searchCatalog() {
+        const key = document.getElementById('catalogKey').value.trim()
+        const scroll = catalog[key]
+        const output = document.getElementById('output')
+        if (scroll) {
+          output.innerText = `📖 Under "${key}", we found: "${scroll}".`
+        } else {
+          output.innerText = `❌ No scroll under key "${key}".`
+        }
+      }
+
+      /* ---------- Functions = Daedalus’s Tools ---------- */
+      const toolsStory = document.getElementById('story-tools')
+
+      function useHammer() {
+        toolsStory.textContent =
+          '🔨 Daedalus’s hammer function strikes swiftly. Functions save effort by repeating tasks easily.'
+      }
+      function useChisel() {
+        toolsStory.textContent =
+          '⛏️ The chisel function carves precisely. Functions let us reuse code instead of rewriting.'
+      }
     </script>
   </body>
 </html>
