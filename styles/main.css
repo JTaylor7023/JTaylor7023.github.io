@@ -386,3 +386,65 @@ blockquote {
 .file-icon {
   font-size: 1.2rem;
 }
+
+ /* Sisyphus styles */
+      #hill {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 1rem auto;
+        background: linear-gradient(to top, #6b8e23 0%, #a2c523 100%);
+        border-radius: 50% 50% 0 0;
+        overflow: hidden;
+      }
+      #boulder {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        background: #555;
+        border-radius: 50%;
+        transition: bottom 0.5s ease;
+      }
+
+      /* Pygmalion styles */
+      #galatea {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 3rem;
+        user-select: none;
+        transition: transform 0.3s;
+      }
+      #galatea.alive {
+        transform: scale(1.2);
+      }
+
+      button {
+    background: #8b0000;
+    color: #fff;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: .5rem;
+}
+button:hover { background: #a52a2a; }
+input {
+    padding: .4rem;
+    margin: .5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#output,
+{
+    margin-top: 1rem;
+    padding: .8rem;
+    border: 1px solid #8b0000;
+    border-radius: 6px;
+    background: #fff;
+    min-height: 40px;
+    font-style: italic;
+}
