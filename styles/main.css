@@ -26,22 +26,70 @@ body {
   background-color: var(--light-bg);
 }
 
-/* Navbar (Main Blog) */
-.navbar {
+/* Shared containers */
+.intro,
+.section,
+section,
+.container,
+.story,
+.learning-body {
+  background: #ffffff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+}
+
+.section,
+section {
+  margin-bottom: 2rem;
+}
+
+.section h2,
+section h2 {
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+  font-size: 1.6rem;
+}
+
+/* Navigation */
+.navbar,
+nav {
   background-color: var(--secondary-color);
-  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-.navbar ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
+.navbar {
+  padding: 1rem 2rem;
 }
 
-.navbar a {
+nav {
+  padding: 1rem;
+}
+
+.navbar ul,
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navbar ul {
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
+
+.navbar a,
+nav a {
   color: var(--text-light);
   text-decoration: none;
   font-weight: 500;
@@ -52,28 +100,7 @@ body {
   color: var(--primary-color);
 }
 
-/* Technical Blog Navigation */
-nav {
-  background-color: var(--secondary-color);
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition);
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius);
 }
@@ -83,41 +110,7 @@ nav a:hover {
   color: white;
 }
 
-/* Main Content */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-/* Intro Section */
-.intro {
-  text-align: center;
-  margin-bottom: 3rem;
-  padding: 2rem;
-  background-color: white;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-}
-
-/* Section  */
-.section,
-section {
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background-color: white;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-}
-
-.section h2,
-section h2 {
-  margin-bottom: 1.5rem;
-  color: var(--secondary-color);
-  font-size: 1.6rem;
-}
-
-/* Blog Grid  */
+/* Blog Grid */
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -150,7 +143,7 @@ section h2 {
   text-decoration: underline;
 }
 
-/* Technical Blog Specific Styles */
+/* Technical Blog */
 .landmark {
   color: var(--accent-color);
   margin-bottom: 1rem;
@@ -162,7 +155,6 @@ code {
   background-color: #f4f4f4;
   color: #c0392b;
   border-radius: var(--border-radius);
-  padding: 0.2rem 0.4rem;
 }
 
 pre {
@@ -170,6 +162,10 @@ pre {
   overflow-x: auto;
   margin: 1rem 0;
   border-left: 4px solid var(--accent-color);
+}
+
+code {
+  padding: 0.2rem 0.4rem;
 }
 
 table {
@@ -231,14 +227,11 @@ footer {
 }
 
 /* Identity CSS */
-
 .container {
   max-width: 800px;
   margin: 0 auto;
   background: var(--dark-bg);
   padding: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
   transition: var(--transition);
 }
 
@@ -246,7 +239,7 @@ blockquote {
   font-size: 1.4rem;
   font-style: italic;
   color: var(--secondary-color);
-  border-left: 4px solid var(var(--primary-color));
+  border-left: 4px solid var(--primary-color);
   padding-left: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -263,8 +256,6 @@ blockquote {
   margin-bottom: 1rem;
   background: var(--light-bg);
   padding: 1rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
   transition: var(--transition);
 }
 
@@ -285,14 +276,12 @@ blockquote {
   text-align: center;
   font-size: 1.2rem;
   color: #2b2b2b;
-  background: #ffffff;
   padding: 1rem;
   border-left: 4px solid var(--accent-color);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
   margin: 1.5rem auto;
   max-width: 700px;
 }
+
 .proverb em {
   display: block;
   font-size: 1rem;
@@ -302,7 +291,7 @@ blockquote {
 
 .date {
   text-align: center;
-  font-size: 0.8;
+  font-size: 0.8rem;
   color: #555555;
   margin-bottom: 2rem;
 }
@@ -310,29 +299,23 @@ blockquote {
 .story {
   max-width: 800px;
   margin: 0 auto 1.5rem auto;
-  background: #ffffff;
-  border: 1px solid #e0e0e0
+  border: 1px solid #e0e0e0;
   line-height: 1.7;
-  border-radius: 4px;
-  
 }
 
 /* Learning Plan */
 .learning-body {
   max-width: 900px;
   margin: 0 auto;
-  padding: 2rem;
-  background: #ffffff;
   border: 1px solid #e0e0e0;
-  border-radius: 6px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
+
 .learning-title {
   text-align: center;
   margin-bottom: 2rem;
   border-bottom: 2px solid #f0f0f0;
   padding-bottom: 1rem;
-
 }
 
 .main-title {
@@ -346,7 +329,6 @@ blockquote {
   font-size: 1rem;
   color: #777;
   font-style: italic;
-
 }
 
 .content p {
@@ -360,8 +342,7 @@ blockquote {
   border-radius: 4px;
 }
 
-/* Markdown styling */
-
+/* Markdown */
 .markdown-link {
   display: inline-flex;
   align-items: center;
@@ -387,64 +368,70 @@ blockquote {
   font-size: 1.2rem;
 }
 
- /* Sisyphus styles */
-      #hill {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        margin: 1rem auto;
-        background: linear-gradient(to top, #6b8e23 0%, #a2c523 100%);
-        border-radius: 50% 50% 0 0;
-        overflow: hidden;
-      }
-      #boulder {
-        position: absolute;
-        left: 50%;
-        bottom: 20px;
-        transform: translateX(-50%);
-        width: 40px;
-        height: 40px;
-        background: #555;
-        border-radius: 50%;
-        transition: bottom 0.5s ease;
-      }
-
-      /* Pygmalion styles */
-      #galatea {
-        display: inline-block;
-        cursor: pointer;
-        font-size: 3rem;
-        user-select: none;
-        transition: transform 0.3s;
-      }
-      #galatea.alive {
-        transform: scale(1.2);
-      }
-
-      button {
-    background: #8b0000;
-    color: #fff;
-    border: none;
-    padding: .5rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    margin: .5rem;
+/* Sisyphus */
+#hill {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 1rem auto;
+  background: linear-gradient(to top, #6b8e23 0%, #a2c523 100%);
+  border-radius: 50% 50% 0 0;
+  overflow: hidden;
 }
-button:hover { background: #a52a2a; }
+
+#boulder {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: #555;
+  border-radius: 50%;
+  transition: bottom 0.5s ease;
+}
+
+/* Pygmalion */
+#galatea {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 3rem;
+  user-select: none;
+  transition: transform 0.3s;
+}
+
+#galatea.alive {
+  transform: scale(1.2);
+}
+
+/* Buttons and Inputs */
+button {
+  background: #8b0000;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+button:hover {
+  background: #a52a2a;
+}
+
 input {
-    padding: .4rem;
-    margin: .5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  padding: 0.4rem;
+  margin: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-#output,
-{
-    margin-top: 1rem;
-    padding: .8rem;
-    border: 1px solid #8b0000;
-    border-radius: 6px;
-    background: #fff;
-    min-height: 40px;
-    font-style: italic;
+#output {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #8b0000;
+  border-radius: 6px;
+  background: #fff;
+  min-height: 40px;
+  font-style: italic;
 }
