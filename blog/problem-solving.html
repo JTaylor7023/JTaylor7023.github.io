@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Problem Solving Reflection</title>
+    <link rel="stylesheet" href="..//styles/main.css" />
+    <style>
+      section,
+      .learning-body {
+        border: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="intro">
+      <h1 class="main-title">Problem Solving Reflection</h1>
+      <p class="subtitle">Steps One and Two</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>1. Blocked on a Simple Problem</h2>
+        <p>
+          My <strong>main.css</strong> stylesheet was a mess of duplicate
+          classes and styles that I had used over different pages. I also
+          noticed that I had a bunch of error messages in my code. The first
+          thing I did was to go through the code and isolate the error messages.
+          For example:
+        </p>
+        <ul>
+          <li>
+            Fixed a typo in my <code>blockquote</code> (<code
+              >var(var(--primary-color))</code
+            >
+            → <code>var(--primary-color)</code>)
+          </li>
+          <li>Fixed a missing semicolon in <code>.story</code></li>
+        </ul>
+        <p>
+          It was a great feeling once I had saved my work to see
+          <em>main</em> turn from red!
+        </p>
+        <p>
+          The lesson I took from this was to pause and check things carefully
+          (particularly with CSS). With JavaScript, if something's not working I
+          think I will realise that there is an error and I cna troubleshoot,
+          but CSS is more subtle. I also learned that when I build multi-page
+          websites, I should treat them as parts of a whole rather than separate
+          entities.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Elegantly Solved a Problem</h2>
+        <p>
+          Once the obvious errors were fixed, I turned to improving the
+          structure of my stylesheet. These are the changes that I made:
+        </p>
+        <ul>
+          <li>
+            Grouped repeated backgrounds, border-radius, box-shadows,
+            transitions into shared blocks.
+          </li>
+          <li>
+            Combined <code>.navbar</code> and <code>nav</code> where they shared
+            base styles.
+          </li>
+          <li>Removed duplicate hover/transition definitions.</li>
+          <li>
+            Fixed <code>blockquote</code> typo and <code>.story</code> missing
+            semicolon.
+          </li>
+          <li>
+            Simplified repeated <code>pre</code>, <code>code</code>, and
+            <code>ul/li</code> spacing rules.
+          </li>
+        </ul>
+        <p>
+          This felt much more elegant, and I was really satisfied with the
+          cleaner result.
+        </p>
+      </section>
+
+      <section class="learning-body">
+        <h2 class="learning-title">
+          3. Reflection on Problem-Solving Techniques
+        </h2>
+        <p>I feel confident using:</p>
+        <ul>
+          <li>
+            <strong>Pseudocode:</strong>helpful for structuring before coding.
+          </li>
+          <li>
+            <strong>Googling:</strong>great for looking up syntax or approaches.
+          </li>
+          <li>
+            <strong>Reading error messages:</strong>particularly after this
+            exercise.
+          </li>
+          <li>
+            <strong>Console.logging:</strong>a tool I’m very comfortable with.
+          </li>
+        </ul>
+
+        <p>I haven't yet had to, but I feel okay about:</p>
+        <ul>
+          <li>
+            <strong>Asking for help:</strong>from peers or coaches when needed.
+          </li>
+        </ul>
+
+        <p>And finally, I've learned the value of:</p>
+        <ul>
+          <li>
+            <strong>Reflection</strong>it helped me identify mistakes, spot
+            repetition, and improve my process overall. And boy, did I do a lot
+            of reflection!
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
