@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Strange Greek Myths — A Compendium</title>
+    <style>
+      :root {
+        --bg: #0f1724;
+        --card: #0b1220;
+        --muted: #9aa4b2;
+        --accent: #eab308;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto,
+          'Helvetica Neue', Arial;
+        margin: 0;
+        background: linear-gradient(180deg, #071029 0%, #071827 100%);
+        color: #e6eef6;
+        line-height: 1.5;
+      }
+      header {
+        padding: 28px 20px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(1.4rem, 2.8vw, 2rem);
+      }
+      p.lead {
+        margin: 6px 0 0;
+        color: var(--muted);
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 28px auto;
+        padding: 0 20px;
+      }
+      .controls {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+      .search {
+        flex: 1;
+        min-width: 200px;
+      }
+      input,
+      select {
+        background: #061019;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        color: inherit;
+        padding: 10px 12px;
+        border-radius: 10px;
+        width: 100%;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 14px;
+      }
+      .card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(255, 255, 255, 0.01)
+        );
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.5);
+      }
+      .tag {
+        display: inline-block;
+        font-size: 12px;
+        padding: 6px 8px;
+        border-radius: 999px;
+        background: rgba(234, 179, 8, 0.12);
+        color: var(--accent);
+        margin-bottom: 8px;
+      }
+      h3 {
+        margin: 6px 0 8px;
+        font-size: 1.05rem;
+      }
+      .summary {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .more {
+        margin-top: 10px;
+        background: rgba(255, 255, 255, 0.02);
+        padding: 10px;
+        border-radius: 8px;
+        color: #dbe8ff;
+        font-size: 0.92rem;
+        display: none;
+      }
+      .card.open .more {
+        display: block;
+      }
+      .meta {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: 10px;
+      }
+      button.toggle {
+        margin-left: auto;
+        background: none;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        padding: 8px 10px;
+        border-radius: 8px;
+        color: inherit;
+        cursor: pointer;
+      }
+      footer {
+        padding: 20px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-top: 30px;
+      }
+      .utilities {
+        display: flex;
+        gap: 10px;
+      }
+      .utilities button {
+        background: #0b1522;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        padding: 8px 12px;
+        border-radius: 10px;
+        color: var(--muted);
+        cursor: pointer;
+      }
+      @media (max-width: 520px) {
+        .controls {
+          flex-direction: column;
+          align-items: stretch;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Strange Greek Myths — A Compendium</h1>
+      <p class="lead">
+        A curated collection of lesser-known and unusual stories from Greek
+        mythology, grouped by theme. Click a card to expand for full details.
+      </p>
+    </header>
+
+    <main class="wrap">
+      <div class="controls">
+        <div class="search">
+          <input id="q" placeholder="Search title, keyword or name…" />
+        </div>
+        <div style="width: 220px">
+          <select id="filter">
+            <option value="all">All themes</option>
+            <option value="punishment">Strange punishments</option>
+            <option value="transformation">Weird transformations</option>
+            <option value="forgotten">Forgotten gods & figures</option>
+            <option value="romance">Odd romances & desires</option>
+            <option value="other">Other oddities</option>
+          </select>
+        </div>
+        <div class="utilities">
+          <button id="reset">Reset</button>
+          <button id="export">Export JSON</button>
+        </div>
+      </div>
+
+      <section class="grid" id="grid"></section>
+
+      <footer>
+        <div>
+          Made for curious readers — feel free to edit, print, or use this file
+          as reference.
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      const myths = [
+        {
+          id: 1,
+          theme: 'punishment',
+          title: 'Tantalus — The Feast of Betrayal',
+          tag: 'Tantalus',
+          summary:
+            'Served his son to the gods; punished in Hades with unreachable food and water.',
+          full: `Tantalus was so arrogant he tried to test the gods by serving them a stew made from his son Pelops. The gods recognized the crime and punished Tantalus in Tartarus — forever tantalized by food and water that recede when he reaches for them. Pelops was restored; his shoulder was replaced with ivory.`,
+        },
+
+        {
+          id: 2,
+          theme: 'punishment',
+          title: 'Marsyas — The Flaying of a Musician',
+          tag: 'Marsyas',
+          summary:
+            'A satyr challenged Apollo and lost — the punishment was brutally physical.',
+          full: `Marsyas found or inherited a flute and grew conceited enough to challenge Apollo to a music contest. After losing (and amid contested rules), Apollo flayed him alive and hung his skin as a trophy. The tale became a warning about hubris toward the gods.`,
+        },
+
+        {
+          id: 3,
+          theme: 'transformation',
+          title: 'Glaucus the Fisherman — Becoming a Sea-God',
+          tag: 'Glaucus',
+          summary:
+            'A fisherman eats a mysterious herb and transforms into an immortal prophetic sea-deity.',
+          full: `Glaucus noticed fish jumping back into the sea after touching a strange herb. He tasted the plant himself and found his body changing: scales, gills, and a voice that spoke prophecies. He became a minor sea-god who wandered shorelines and tried (unsuccessfully) to win the nymph Scylla.`,
+        },
+
+        {
+          id: 4,
+          theme: 'forgotten',
+          title: 'Abaris the Hyperborean — The Flying Arrow',
+          tag: 'Abaris',
+          summary:
+            'A healer and shaman who traveled the world on a magical arrow gifted by Apollo.',
+          full: `Abaris came from the far north (Hyperborea) and was fabled to travel on a golden arrow given by Apollo. He performed healing rites, prophecy, and diplomatic missions. Extremely strange: some accounts say he ate nothing, living on divine sustenance alone.`,
+        },
+
+        {
+          id: 5,
+          theme: 'transformation',
+          title: 'Scylla and Her Jealousy — A Nymph Turned Monster',
+          tag: 'Scylla',
+          summary:
+            'Multiple versions: poisoned love and jealous sorcery turn a nymph into a multi-headed sea monster.',
+          full: `Scylla was once a lovely nymph pursued by glances and magic. Depending on the teller, either Circe’s jealousy or a love potion gone wrong transformed Scylla into a many-headed creature who haunted narrow straits and devoured sailors.`,
+        },
+
+        {
+          id: 6,
+          theme: 'romance',
+          title: 'Pygmalion — In Love with a Statue',
+          tag: 'Pygmalion',
+          summary:
+            'A sculptor falls for his creation; Aphrodite grants the statue life.',
+          full: `Pygmalion, disgusted by mortal imperfections, carved his perfect woman and fell in love with the statue. He prayed to Aphrodite, who animated the figure. The myth explores aesthetic obsession and desire for idealized love.`,
+        },
+
+        {
+          id: 7,
+          theme: 'other',
+          title: 'Typhon Steals Zeus’s Sinews',
+          tag: 'Typhon',
+          summary:
+            'The monstrous Typhon incapacitated Zeus by hiding his tendons; they were later recovered.',
+          full: `Typhon, a titanic chaos-monster, overthrew the gods briefly. He bound Zeus and removed his sinews, hiding them so Zeus could not move. Hermes and a crafty shepherd retrieved the tendons and restored Zeus to power.`,
+        },
+
+        {
+          id: 8,
+          theme: 'other',
+          title: 'Arachne — The Weaver Who Dared Athena',
+          tag: 'Arachne',
+          summary:
+            'A gifted mortal weaver challenged Athena and was turned into a spider.',
+          full: `Arachne wove a tapestry that insulted the gods by depicting their failings. Athena, enraged by both the subject and Arachne’s temerity, destroyed the work and transformed Arachne into a spider so she would weave for eternity.`,
+        },
+
+        {
+          id: 9,
+          theme: 'punishment',
+          title: 'Lycaon — Feast of Human Flesh',
+          tag: 'Lycaon',
+          summary:
+            'King Lycaon tried to trick Zeus with human flesh and was turned into a wolf.',
+          full: `Lycaon served Zeus a meal containing human flesh to test whether the god was truly omniscient. Zeus punished him by restoring the victim (in some versions) and turning Lycaon into a wolf, a story that feeds into later werewolf lore.`,
+        },
+
+        {
+          id: 10,
+          theme: 'forgotten',
+          title: 'Endymion — Eternal Sleep for Eternal Beauty',
+          tag: 'Endymion',
+          summary:
+            'A shepherd placed into perpetual sleep so Selene may visit him nightly.',
+          full: `Endymion was beloved by the moon goddess Selene. Either granted eternal youth and sleep or placed under a spell so she might visit him each night, his tale raises questions about consent, immortality, and longing.`,
+        },
+
+        {
+          id: 11,
+          theme: 'other',
+          title: 'Pheneus’s Talking Mouse (Herodotean Oddity)',
+          tag: 'Pheneus',
+          summary:
+            'Strange anecdotes include animals that spoke or omens that misfired; small local tales survive in oddities collections.',
+          full: `Beyond canonical gods, ancient authors preserved little local tales: talking mice, complaining trees, oracles that misread simple questions. These micro-myths reveal a folkloric side of Greek storytelling.`,
+        },
+
+        {
+          id: 12,
+          theme: 'transformation',
+          title: 'The Olive and the Contest (Athena vs. Poseidon)',
+          tag: 'Athena',
+          summary:
+            'Rather than a violent battle, a city’s patronage was decided by a gift — Athena’s olive tree beat Poseidon’s salt-spring.',
+          full: `When Athens needed a patron deity, Poseidon struck land with his trident and produced salt water; Athena planted an olive tree. The people chose Athena’s gift for its practical and symbolic value; the contest explains the city’s name and the origin of the olive as sacred.`,
+        },
+      ]
+
+      const grid = document.getElementById('grid')
+      function render(list) {
+        grid.innerHTML = ''
+        list.forEach((m) => {
+          const card = document.createElement('article')
+          card.className = 'card'
+          card.innerHTML = `
+          <span class="tag">${m.tag}</span>
+          <h3>${m.title}</h3>
+          <div class="summary">${m.summary}</div>
+          <div class="meta">
+            <div style="font-size:13px;color:var(--muted)">${m.theme}</div>
+            <button class="toggle">Read</button>
+          </div>
+          <div class="more">${m.full}</div>
+        `
+          card.querySelector('.toggle').addEventListener('click', () => {
+            card.classList.toggle('open')
+            card.querySelector('.toggle').textContent = card.classList.contains(
+              'open'
+            )
+              ? 'Hide'
+              : 'Read'
+          })
+          grid.appendChild(card)
+        })
+      }
+
+      render(myths)
+
+      document.getElementById('q').addEventListener('input', (e) => {
+        const q = e.target.value.toLowerCase().trim()
+        const f = document.getElementById('filter').value
+        const out = myths.filter((m) => {
+          if (f !== 'all' && m.theme !== f) return false
+          return [m.title, m.summary, m.full, m.tag]
+            .join(' ')
+            .toLowerCase()
+            .includes(q)
+        })
+        render(out)
+      })
+
+      document.getElementById('filter').addEventListener('change', (e) => {
+        document.getElementById('q').dispatchEvent(new Event('input'))
+      })
+
+      document.getElementById('reset').addEventListener('click', () => {
+        document.getElementById('q').value = ''
+        document.getElementById('filter').value = 'all'
+        render(myths)
+      })
+
+      document.getElementById('export').addEventListener('click', () => {
+        const data = JSON.stringify(myths, null, 2)
+        const blob = new Blob([data], { type: 'application/json' })
+        const url = URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = 'strange-greek-myths.json'
+        a.click()
+        URL.revokeObjectURL(url)
+      })
+    </script>
+  </body>
+</html>
